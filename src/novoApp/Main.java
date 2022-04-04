@@ -1,10 +1,13 @@
 package novoApp;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.sql.Connection;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
+
+import util.ConnectionFactory;
 
 public class Main {
 
@@ -14,6 +17,12 @@ public class Main {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		
+		Connection connection = ConnectionFactory.getConnection();
+		ConnectionFactory.closeConnection(connection);
+		
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
