@@ -12,10 +12,10 @@ public class Task {
 	private String notes;
 	private Date deadline;
 	private Date createdAt;
-	private Date updateAt;
+	private Date updatedAt;
 
 	public Task(int id, int id_project, String name, String description, boolean completed, String notes, Date deadline,
-			Date createdAt, Date updateAt) {
+			Date createdAt, Date updatedAt) {
 		super();
 		this.id = id;
 		this.id_project = id_project;
@@ -25,7 +25,7 @@ public class Task {
 		this.notes = notes;
 		this.deadline = deadline;
 		this.createdAt = createdAt;
-		this.updateAt = updateAt;
+		this.updatedAt = updatedAt;
 	}
 	
 	public Task() {
@@ -96,19 +96,19 @@ public class Task {
 		this.createdAt = createdAt;
 	}
 
-	public Date getUpdateAt() {
-		return updateAt;
+	public Date getUpdatedAt() {
+		return updatedAt;
 	}
 
-	public void setUpdateAt(Date updateAt) {
-		this.updateAt = updateAt;
+	public void setUpdateAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 
 	@Override
 	public String toString() {
 		return "task [id=" + id + ", id_project=" + id_project + ", name=" + name + ", description=" + description
 				+ ", completed=" + completed + ", notes=" + notes + ", deadline=" + deadline + ", createdAt="
-				+ createdAt + ", updateAt=" + updateAt + "]";
+				+ createdAt + ", updatedAt=" + updatedAt + "]";
 	}
 
 	

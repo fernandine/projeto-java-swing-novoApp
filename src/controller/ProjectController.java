@@ -25,10 +25,10 @@ public class ProjectController {
 			connection = ConnectionFactory.getConnection();
 			statement = connection.prepareStatement(sql);
 
-			statement.setString(2, project.getName());
-			statement.setString(3, project.getDescription());
+			statement.setString(1, project.getName());
+			statement.setString(2, project.getDescription());
 			statement.setDate(3, new Date(project.getCreatedAt().getTime()));
-			statement.setDate(4, new Date(project.getUpdateAt().getTime()));
+			statement.setDate(4, new Date(project.getUpdatedAt().getTime()));
 			statement.execute();
 
 		} catch (Exception e) {
@@ -41,7 +41,7 @@ public class ProjectController {
 
 	public void update(Task project) {
 
-		String sql = "UPDATE projects SET" + "name = ?, " + "createdAt = ?, " + "updateAt = ?, " + "WHERE id = ?";
+		String sql = "UPDATE projects SET" + "name = ?, " + "createdAt = ?, " + "updatedAt = ?, " + "WHERE id = ?";
 
 		Connection connection = null;
 		PreparedStatement statement = null;
@@ -53,7 +53,7 @@ public class ProjectController {
 			statement.setString(1, project.getName());
 			statement.setString(2, project.getDescription());
 			statement.setDate(3, new Date(project.getCreatedAt().getTime()));
-			statement.setDate(4, new Date(project.getUpdateAt().getTime()));
+			statement.setDate(4, new Date(project.getUpdatedAt().getTime()));
 			statement.setInt(5, project.getId());
 			statement.execute();
 
@@ -90,7 +90,7 @@ public class ProjectController {
 				project.setName(result.getString("name"));
 				project.setDescription(result.getString("description"));
 				project.setCreatedAt(result.getDate("createdAt"));
-				project.setUpdateAt(result.getDate("updateAt"));
+				project.setUpdateAt(result.getDate("updatedAt"));
 
 				projects.add(project);
 			}
